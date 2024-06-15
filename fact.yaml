@@ -1,0 +1,8 @@
+---
+- name: show me facts
+  hosts: servera.test.com
+  tasks:
+    - name: print fact on file
+      debug:
+        var: ansible_facts
+        
