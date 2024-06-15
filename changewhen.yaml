@@ -5,9 +5,9 @@
     - name: run cal command 
       shell: /usr/bin/cal 
       register: cal_result 
+      changed_when: false
 
     - name: print cal_result value
       debug:
         var: cal_result
-        
-          
+
