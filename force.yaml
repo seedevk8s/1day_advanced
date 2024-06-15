@@ -3,6 +3,11 @@
   hosts: db
   force_handlers: true
   tasks:
+    - name: install chrony pkg 
+      dnf:
+        name: chrony
+        state: present
+
     - name: call handler
       shell: /usr/bin/date
       notify:
