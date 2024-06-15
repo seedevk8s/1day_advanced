@@ -9,3 +9,8 @@
 
     - name: run iscsi command
       command: iscsiadm -m session    
+      register: bbb
+
+    - name: print bbb value 
+      debug:
+        var: bbb     
