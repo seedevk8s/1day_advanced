@@ -1,0 +1,31 @@
+---
+- name: block test
+  hosts: serverc.test.com
+  tasks:
+  vars:
+    web_pkg: httpd
+    ftp_pkg: vsftpd
+    db_pkg: mariadb-server
+ 
+  tasks:
+    - name: Server setting
+      block:
+        - name: install "{{ web_pkg }}"
+          dnf:
+            name: "{{ web_pkg }}"
+            state: latest
+            
+
+
+      rescue:
+        - name: install "{{ ftp_pkg }}"      
+          dnf:  
+            name: "{{ ftp_pkg }}"
+            state: present
+
+
+      always:
+        - name: install "{{ db_pkg }}"      
+          dnf:  
+            name: "{{ db_pkg }}"
+            state: present
