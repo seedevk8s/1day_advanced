@@ -1,0 +1,10 @@
+---
+  - name : handler test 1
+    hosts: servera.test.com
+    gather_facts: false 
+    tasks:
+      - name: install web pkg
+        dnf:
+          name: httpd
+          state: latest
+          
