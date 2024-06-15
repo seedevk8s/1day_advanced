@@ -1,0 +1,11 @@
+---
+- name: install IP-SAN
+  hosts: db
+  tasks:
+    - name: install iscsi pkg
+      dnf:
+        name: iscsi-initiator-utils
+        state: latest
+
+    - name: run iscsi command
+      command: iscsiadm -m session    
