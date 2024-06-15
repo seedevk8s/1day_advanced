@@ -10,6 +10,7 @@
     - name: run iscsi command
       command: iscsiadm -m session    
       register: bbb
+#      ignore_errors: true
 
     - name: print bbb value 
       debug:
