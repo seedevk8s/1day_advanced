@@ -9,4 +9,4 @@
     - name: print date_result value
       debug:
         msg: yes...today is Sat Jun 15   
-        
+      changed_when: '"JUN 15" in date_result.stdout'  
