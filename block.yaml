@@ -1,6 +1,6 @@
 ---
 - name: block test
-  hosts: serverc.test.com
+  hosts: serverd.test.com
   tasks:
   vars:
     web_pkg: httpd
@@ -14,7 +14,7 @@
           dnf:
             name: "{{ web_pkg }}"
             state: latest
-            
+          failed_when: '"{{ web_pkg }}" == "httpd"'    
 
 
       rescue:
