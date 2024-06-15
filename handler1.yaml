@@ -8,9 +8,24 @@
           name: httpd
           state: latest
 
-  - name: change default page
-    copy: 
-      content: 'Hello Ansible'
-      dest: /var/www/html/index.html
-    notify:
-      - aaa  
+      - name: change default page
+        copy: 
+          content: 'Hello Ansible'
+          dest: /var/www/html/index.html
+        notify:
+          - aaa  
+
+      - name: test message 1
+        debug:
+          msg: test msg 1
+      - name: test message 2
+        debug:
+          msg: test msg 2     
+
+    handlers:
+      - name: aaa 
+        service:
+          name: httpd
+          state: restarted
+          enabled: yes
+
