@@ -1,0 +1,12 @@
+---
+- name: changed_when example 2
+  hosts: db
+  tasks:
+    - name: run date command 
+      command: /usr/bin/date
+      register: date_result
+
+    - name: print date_result value
+      debug:
+        msg: yes...today is Sat Jun 15   
+        
