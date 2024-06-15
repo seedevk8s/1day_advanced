@@ -11,7 +11,7 @@
       command: iscsiadm -m session    
       register: bbb
 #      ignore_errors: true
-      failed_when: bbb.rc in (0, 21, 77, 22)
+      failed_when: bbb.rc not in (0, 21, 77, 22)
 
     - name: print bbb value 
       debug:
