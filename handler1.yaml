@@ -7,4 +7,8 @@
         dnf:
           name: httpd
           state: latest
-          
+
+  - name: change default page
+    copy: 
+      content: 'Hello Ansible'
+      dest: /var/www/html/index.html
