@@ -12,3 +12,5 @@
     copy: 
       content: 'Hello Ansible'
       dest: /var/www/html/index.html
+    notify:
+      - aaa  
