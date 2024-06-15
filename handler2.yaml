@@ -1,0 +1,30 @@
+---
+- name : handler test 2
+  hosts: servera.test.com
+  gather_facts: false 
+  tasks:
+    - name: run df command
+      shell: /usr/bin/df
+      notify:
+        - rundf
+
+    - name: run cal command 
+      command: /usr/bin/cal 
+      notify:
+        - runcal
+
+    - name: test message 
+      debug:
+        msg: dummy message
+ 
+
+  handlers:
+    - name: runcal 
+      debug:
+        msg: cal command is run by runcal
+
+    - name: rundf
+      debug:
+        msg: df -h command is run by rundf    
+
+

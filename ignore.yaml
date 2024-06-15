@@ -1,0 +1,16 @@
+---
+- name: ignore_fail example
+  hosts: localhost
+  gather_facts: false
+  tasks: 
+    - name: check web svr
+      uri: 
+        url: http://serverb.test.com    
+
+- name: install web svr 
+  hosts: serverc.test.com
+  tasks: 
+    - name: apaache web server 
+      yum:
+        name: httpd
+        state: latest         
