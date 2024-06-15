@@ -6,6 +6,7 @@
     - name: check web svr
       uri: 
         url: http://serverb.test.com    
+      ignore_errors: true   
 
 - name: install web svr 
   hosts: serverc.test.com
