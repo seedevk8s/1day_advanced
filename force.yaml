@@ -1,6 +1,7 @@
 ---
 - name: force handler test
   hosts: db
+  force_handlers: true
   tasks:
     - name: call handler
       shell: /usr/bin/date
